@@ -70,7 +70,7 @@ public class Player_script : MonoBehaviour
         //fancy fov sprint juice
         if (Input.GetKey(sprintkey))
         {
-            mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, 90f, Time.deltaTime * 2f); // both lines basically just lerp from 90 fov to 120 and vice versa
+            mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, 75f, Time.deltaTime * 2f); // both lines basically just lerp from 90 fov to 120 and vice versa
             Debug.Log("fovchange");
         }
         else
@@ -78,7 +78,7 @@ public class Player_script : MonoBehaviour
             mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, 60f, Time.deltaTime * 2f);
         }
 
-        if (Input.GetKey(flashKey))
+        if (Input.GetKeyDown(flashKey))
         {
             bool reverseActive = !flashLight.activeInHierarchy; //! is a sort of reversal 
             flashLight.SetActive(reverseActive);
